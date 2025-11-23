@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Album Cover Generatoir</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <header class="header">
+                <h1 class="logo">the Album Cover GENENENE</h1>
+                <p class="subtitle">Cranks out 4000×4000 like it’s nothing</p>
+            </header>
+
+            <main class="main-content">
+                <div class="upload-card">
+                    <div class="dropzone" id="dropzone">
+                        <div class="dropzone-content">
+                            <svg
+                                class="upload-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                ></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p class="dropzone-text">Pick your damn files</p>
+                            <button class="btn-upload" id="selectBtn">
+                                Select Shit
+                            </button>
+                        </div>
+                        <input
+                            type="file"
+                            id="fileInput"
+                            multiple
+                            accept="image/*"
+                            hidden
+                        />
+                    </div>
+
+                    <div class="info-section">
+                        <p>
+                            Bro, this fuckin shitty site slaps together every
+                            ‘professional’ sounding word on Earth into one
+                            ridiculously long-ass sentence like it’s doing god’s
+                            fuckin work. And apparently it was founded in 1924
+                            or some museum-grade bullshit — like bro, who cares?
+                            But holy shit, this fuckin shitty site cranks out
+                            4000×4000 like it’s nothing. JPG? That crusty-ass
+                            format can go cry in the corner.
+                        </p>
+                        <div class="action-row">
+                            <button class="btn-primary" id="convertBtn">
+                                Start the fuckin conversion
+                            </button>
+                            <button class="btn-secondary" id="clearBtn">
+                                Clear the damn list
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="files-card">
+                    <div class="files-header">
+                        <h2>Files</h2>
+                        <span class="file-count" id="fileCount">0</span>
+                    </div>
+                    <div class="files-list" id="filesList">
+                        <div class="empty-state">
+                            <p>No files yet, upload some shit</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div class="overlay" id="overlay" style="display: none">
+                <div class="overlay-content">
+                    <div class="spinner"></div>
+                    <h3 id="overlayTitle">Processing… hold the fuck on</h3>
+                    <p id="overlayMessage">
+                        This fuckin shitty site is doing its thing
+                    </p>
+                    <div
+                        class="progress-bar"
+                        id="progressBar"
+                        style="display: none"
+                    >
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="app.js"></script>
+    </body>
+</html>
